@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+#Este es el login
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log-in</title>
+</head>
+<body background="http://www.powerpointhintergrund.com/uploads/abstract-blurry-background-22.jpg"style=" background-size:100%; background-repeat; no-repeat background-attachment;" bgproperties="fixed">
+
+    <center>
+        <br><br>
+        <br><br>
+        <br><br>
+        <FONT FACE="Arial narrow"; size="7" color="#ffffff">User Login</FONT> <h1 width="100%" style="border:0px;"></h1>
+    </center>
+
+
+   <center>
+        <form action="/vista" method="POST">
+            <br><input required="required" type="number" step="any" name="deposito" placeholder="Password" style="font-size:35px" ><br>
+            <br><input required="required" type="number" step="any" name="deposito" placeholder="Email" style="font-size:35px" ><br>
+            <br><input type="submit" value="Sign in" style="width:100px; height:35px;background-color:#184372;border:crimson;color:white; "><br>
+        </form>
+   </center>
+</body>
+</html>

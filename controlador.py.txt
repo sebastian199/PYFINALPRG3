@@ -1,0 +1,32 @@
+fron main import db
+#crear un usuario
+from modelo import Usuario, Producto
+
+admin = Usuario("admin","123456", "admin@admin.com")
+producto = Producto( "producto1",90,"carro barato","http://imagendecarro.png")
+
+db.session.add(admin)
+db.session.add(produco)
+
+db.session.commit()
+
+
+#buscar todos los usuario
+query = Usuario.query.all()
+
+for data in query:
+  print( data.nombre, data.correo)
+
+#buscar un usuario en especifico
+buscar = Usuario.query.filter_by(nombre="admin").first()
+if correo == buscar.email:
+  print("existe")
+else
+  print("no eres un usuario")
+
+
+def crear_usuario( nombre, password, email):
+  usu = Usuario( nombre, password, email)
+  db.session.add(usu)
+  db.session.commit()
+

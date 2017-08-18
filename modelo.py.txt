@@ -1,0 +1,42 @@
+fron main import db
+from datetime import datetime
+
+
+
+class Usuario(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(80), unique=True)
+    password = db.Column(db.String(10))
+    email = db.Column(db.String(120), unique=True)
+
+    def __init__(self, nombre, password, email):
+        self.nombre  = nombre 
+        self.password = password 
+        self.email = email
+
+    def __repr__(self):
+        return '<usuario %r>' % self.nombre 
+
+
+class Producto(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(80))
+    precio = db.Column(db.Integer)
+    descripcion = db.Column(db.Text)
+    imagen = db.Column(db.String(80))
+    publishment = db.Column(db.DateTime)
+
+    def __init__(self, nombre,precio,descripcion,imagen,publishment=None ):
+        self.nombre  = nombre 
+        self.precio = precio
+        self.descipcion = descripcion		
+	self.imagen = imagen
+	if publishment is None:
+	   publishment = datetime.utcnow()
+	self.publishment = publishment
+
+    def __repr__(self):
+        return '<producto %r>' % self.nombre 
+
+#Crear la estructura en la base de datos
+db.create_all()
